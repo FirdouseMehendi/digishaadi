@@ -1,0 +1,10 @@
+{
+  "name": "DigiShaadi | Video Invitations",
+  "short_name": "DigiShaadi",
+  "description": "Video invitations for every wedding tradition",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#24103f",
+  "theme_color": "#24103f",
+  "icons": [{ "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
+}

@@ -1,11 +1,7 @@
-{
+﻿{
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "digishaadi",
   "compatibility_date": "2026-11-13",
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "."
-  }
+  "observability": { "enabled": true },
+  "assets": { "directory": "./docs" }
 }

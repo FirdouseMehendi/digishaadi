@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-page: var(--page);
+  --color-alt: var(--alt);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-head: var(--head);
+  --color-accent: var(--accent);
+  --color-onaccent: var(--onaccent);
+  --font-display: 'Playfair Display', 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', serif;
+  --font-body: 'Poppins', 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', sans-serif;
+}
+
+/* ---------- Themes ---------- */
+:root, [data-theme='purple'] {
+  --page: #24103f; --alt: #2c1452; --card: #35185c; --line: #5a3a96;
+  --ink: #f3ecff; --muted: #d2c6ea; --head: #e8cfa5;
+  --accent: #e6b95c; --onaccent: #24103f;
+  --hero-a: #6a3fb5; --hero-b: #3b1d73; --hero-c: #1d0b3a;
+}
+[data-theme='burgundy'] {
+  --page: #3a0010; --alt: #4a0618; --card: #5c0f26; --line: #8a2a47;
+  --ink: #fff3ee; --muted: #f0cfd2; --head: #ffd36b;
+  --accent: #e0a21b; --onaccent: #3a0010;
+  --hero-a: #a3153d; --hero-b: #7a0f2e; --hero-c: #3a0010;
+}
+[data-theme='emerald'] {
+  --page: #06281c; --alt: #0a3626; --card: #0f4733; --line: #2a7a58;
+  --ink: #f4f0dc; --muted: #cfe0d4; --head: #f0cf75;
+  --accent: #d4a017; --onaccent: #06281c;
+  --hero-a: #14895a; --hero-b: #0b5d3b; --hero-c: #04261a;
+}
+[data-theme='ivory'] {
+  --page: #fffbf0; --alt: #f6ecd4; --card: #ffffff; --line: #eadfb8;
+  --ink: #2b2118; --muted: #6b5f4d; --head: #7a0f2e;
+  --accent: #b8892b; --onaccent: #ffffff;
+  --hero-a: #fff6e0; --hero-b: #f8ecd0; --hero-c: #f1e2bd;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: var(--font-body); transition: background .4s, color .4s;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); color: var(--head); }
+[dir='rtl'] body { font-family: 'Noto Nastaliq Urdu', 'Poppins', sans-serif; line-height: 1.9; }
+[dir='rtl'] .rtl-flip { transform: scaleX(-1); }
+
+.hero-bg {
+  background:
+    radial-gradient(60% 50% at 50% 0%, var(--hero-a) 0%, transparent 70%),
+    linear-gradient(180deg, var(--hero-b), var(--hero-c));
+}
+[data-theme='ivory'] .hero-bg h1 { color: #7a0f2e; }
+
+.glass { backdrop-filter: blur(10px); background: color-mix(in srgb, var(--page) 80%, transparent); }
+
+/* Modern CSS: scroll-driven progress bar (progressive enhancement) */
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60;
+    background: var(--accent); transform-origin: 0 50%;
+    animation: grow linear both; animation-timeline: scroll(root);
+  }
+  @keyframes grow { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
