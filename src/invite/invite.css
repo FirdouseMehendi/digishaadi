@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-deep: #04241a;
+  --color-emerald: #0a4a33;
+  --color-jade: #14805a;
+  --color-gold: #e9c46a;
+  --color-gold-hi: #fff4c2;
+  --color-gold-lo: #b98a2b;
+  --color-cream: #fbf3dc;
+  --font-display: 'Playfair Display', serif;
+  --font-cin: 'Cinzel', serif;
+  --font-ar: 'Amiri', serif;
+  --font-ur: 'Noto Nastaliq Urdu', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: #04241a; color: #f7ecd0;
+  font-family: var(--font-body); -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+.locked { overflow: hidden; height: 100dvh; }
+
+.gold-text {
+  background: linear-gradient(180deg, #fff4c2 0%, #e9c46a 40%, #b98a2b 72%, #f3d98b 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.bg-emerald-royal {
+  background:
+    radial-gradient(75% 45% at 50% 0%, #14805a 0%, transparent 70%),
+    linear-gradient(180deg, #0a4a33 0%, #04241a 55%, #021510 100%);
+}
+.pattern {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='%23e9c46a' stroke-width='1.4'><rect x='30' y='30' width='60' height='60'/><rect x='30' y='30' width='60' height='60' transform='rotate(45 60 60)'/><circle cx='60' cy='60' r='17'/></svg>");
+  background-size: 120px 120px; opacity: .1;
+}
+.frame { border: 1.5px solid rgba(233,196,106,.55); box-shadow: inset 0 0 0 6px rgba(4,36,26,.9), inset 0 0 0 7.5px rgba(233,196,106,.3); }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@keyframes drift { from { transform: translateY(0) } to { transform: translateY(-110vh) } }
+.spark { position: fixed; bottom: -20px; border-radius: 50%; pointer-events: none; z-index: 1;
+  background: radial-gradient(circle, #fff6cf 0%, #e9c46a 45%, rgba(233,196,106,0) 72%);
+  animation: drift linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .spark { display: none; }
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
