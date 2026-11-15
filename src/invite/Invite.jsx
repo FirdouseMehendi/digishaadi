@@ -118,6 +118,38 @@ function Couple() {
   )
 }
 
+function Venue() {
+  const { venue } = COUPLE
+  const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.mapQuery)}`
+  return (
+    <section className="px-5 py-16">
+      <Heading kicker="Where we celebrate" title="The Venue" />
+      <Reveal className="frame mx-auto max-w-sm overflow-hidden rounded-3xl bg-gradient-to-b from-emerald to-deep text-center">
+        <svg viewBox="0 0 900 420" className="w-full" fill="#e9c46a" stroke="#f3d98b" strokeWidth="3" aria-hidden="true">
+          <rect width="900" height="420" fill="#04241a" stroke="none" />
+          <circle cx="450" cy="150" r="170" fill="rgba(255,226,140,.1)" stroke="none" />
+          <rect x="60" y="150" width="30" height="270" /><path d="M52 150 h46 l-23 -50 z" /><circle cx="75" cy="92" r="9" />
+          <rect x="810" y="150" width="30" height="270" /><path d="M802 150 h46 l-23 -50 z" /><circle cx="825" cy="92" r="9" />
+          <rect x="150" y="250" width="600" height="170" />
+          <path d="M280 250 C280 150 360 130 450 70 C540 130 620 150 620 250 Z" /><rect x="446" y="20" width="8" height="55" /><circle cx="450" cy="14" r="9" />
+          <path d="M170 250 C170 200 205 190 240 160 C275 190 310 200 310 250 Z" /><path d="M590 250 C590 200 625 190 660 160 C695 190 730 200 730 250 Z" />
+          <g fill="#04241a" stroke="none"><path d="M410 420 V330 C410 290 430 280 450 262 C470 280 490 290 490 330 V420 Z" /><path d="M200 420 V350 C200 322 214 316 225 304 C236 316 250 322 250 350 V420 Z" /><path d="M650 420 V350 C650 322 664 316 675 304 C686 316 700 322 700 350 V420 Z" /></g>
+        </svg>
+        <div className="p-6">
+          <h3 className="gold-text font-display text-4xl font-extrabold">{venue.name}</h3>
+          <p className="mt-1 text-sm text-cream/80">{venue.city} · {venue.pin}</p>
+          <p className="mx-auto mt-3 max-w-[260px] text-sm text-cream/70">Haldi, Mehendi and Nikah, all celebrated under one roof.</p>
+          <div className="mt-5 flex flex-wrap justify-center gap-2.5">
+            <a href={maps} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-deep active:scale-95">Get directions</a>
+            <a href={venue.reel} target="_blank" rel="noopener noreferrer" className="rounded-full border border-gold/60 px-4 py-2 text-xs font-semibold text-gold-hi active:scale-95">See the venue</a>
+          </div>
+          <p className="mt-4 text-xs text-cream/50">Instagram · @{venue.instagram}</p>
+        </div>
+      </Reveal>
+    </section>
+  )
+}
+
 function Gallery() {
   return (
     <section className="py-16">
@@ -192,6 +224,7 @@ export default function Invite() {
         <Countdown />
         <Couple />
         <Events />
+        <Venue />
         <Gallery />
         <Rsvp />
         <Thanks onShare={share} />

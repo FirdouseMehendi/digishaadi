@@ -31,6 +31,7 @@ export default function Events() {
       <div ref={ref} onScroll={onScroll} className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-[10vw] pb-4">
         {events.map((ev) => (
           <div key={ev.id} className="frame w-[80vw] max-w-[340px] shrink-0 snap-center rounded-3xl bg-gradient-to-b from-emerald to-deep p-6 text-center">
+            {ev.photo && <img src={ev.photo} alt={`${ev.title} ceremony`} loading="lazy" className="-mx-1 -mt-1 mb-4 aspect-[4/3] w-[calc(100%+0.5rem)] rounded-2xl border border-gold/50 object-cover" />}
             <p className="font-cin text-[10px] tracking-[0.5em] text-gold uppercase">{fmtDate(ev.date, { weekday: 'long' })}</p>
             <h3 className="gold-text mt-3 font-display text-5xl font-extrabold">{ev.title}</h3>
             <p className="gold-text mt-1 font-ur text-3xl leading-[1.8]">{ev.ur}</p>

@@ -13,18 +13,21 @@ export const COUPLE = {
   // Countdown target (start of the Nikah day, India time)
   nikahDate: '2026-12-05T00:00:00+05:30',
 
-  venue: { name: 'Danah Palace', city: 'Tumkur, Karnataka', pin: '572101', mapQuery: 'Danah Palace Tumkur 572101' },
+  venue: {
+    name: 'Danah Palace', city: 'Tumkur, Karnataka', pin: '572101', mapQuery: 'Danah Palace Tumkur 572101',
+    instagram: 'danahpalace', reel: 'https://www.instagram.com/danahpalace/reel/Cosl7KSr57S/',
+  },
 
-  // time: '' means "not shown"; add e.g. 'After Zuhr · 1:00 PM' when confirmed
+  // photo: './haldi.jpg' (file in public/invite/) shows a banner photo on that card. time: '' means "not shown"; add e.g. 'After Zuhr · 1:00 PM' when confirmed
   events: [
-    { id: 'haldi', title: 'Haldi', ur: 'حلدی', date: '2026-12-03', blurb: 'Turmeric, laughter and blessings' },
-    { id: 'mehendi', title: 'Mehendi', ur: 'مہندی', date: '2026-12-04', blurb: 'An evening of henna, music and joy' },
-    { id: 'nikah', title: 'Nikah', ur: 'نکاح', date: '2026-12-05', blurb: 'The sacred union, in the presence of family' },
+    { id: 'haldi', title: 'Haldi', ur: 'حلدی', date: '2026-12-03', photo: '', blurb: 'Turmeric, laughter and blessings' },
+    { id: 'mehendi', title: 'Mehendi', ur: 'مہندی', date: '2026-12-04', photo: '', blurb: 'An evening of henna, music and joy' },
+    { id: 'nikah', title: 'Nikah', ur: 'نکاح', date: '2026-12-05', photo: '', blurb: 'The sacred union, in the presence of family' },
   ],
 
   welcomeBy: ['Khan Family', 'Sheikh Family', 'All relatives and friends'],
 
-  // Add photos by putting files in /public/invite and listing them here, e.g. '/invite/1.jpg'
+  // Add photos by putting files in public/invite/ and listing them here, e.g. './1.jpg'
   gallery: [
     { src: '', caption: 'Where it began' },
     { src: '', caption: 'Our favourite moments' },
