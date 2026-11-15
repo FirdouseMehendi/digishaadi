@@ -47,11 +47,13 @@ export function Lantern({ className = '', delay = 0 }) {
 }
 
 // Monogram avatar (used until a real photo is supplied)
-export function Avatar({ name, photo, size = 150 }) {
+export function Avatar({ name, photo, Art, size = 150 }) {
   return (
     <div className="relative mx-auto grid place-items-center rounded-full p-1.5" style={{ width: size, height: size, background: 'conic-gradient(#fff4c2,#b98a2b,#e9c46a,#fff4c2)' }}>
       {photo ? (
         <img src={photo} alt={name} className="h-full w-full rounded-full object-cover" />
+      ) : Art ? (
+        <div className="h-full w-full overflow-hidden rounded-full"><Art /></div>
       ) : (
         <div className="grid h-full w-full place-items-center rounded-full bg-gradient-to-br from-emerald to-deep">
           <span className="gold-text font-display text-6xl font-bold">{name[0]}</span>

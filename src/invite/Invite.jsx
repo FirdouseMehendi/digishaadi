@@ -7,6 +7,7 @@ import SaveTheDate from './SaveTheDate'
 import Countdown from './Countdown'
 import Events from './Events'
 import Rsvp from './Rsvp'
+import { BrideArt, GroomArt } from './art'
 
 const { groom, bride } = COUPLE
 
@@ -100,9 +101,9 @@ function Verse() {
 }
 
 function Couple() {
-  const Card = ({ p, role }) => (
+  const Card = ({ p, role, Art }) => (
     <Reveal className="frame mx-auto max-w-xs rounded-3xl bg-gradient-to-b from-emerald/80 to-deep p-7 text-center">
-      <Avatar name={p.name} photo={p.photo} />
+      <Avatar name={p.name} photo={p.photo} Art={Art} size={170} />
       <p className="mt-4 font-cin text-[10px] tracking-[0.5em] text-gold uppercase">{role}</p>
       <h3 className="gold-text font-display text-3xl font-bold">{p.full}</h3>
       <p className="mt-2 text-sm leading-relaxed text-cream/75">{p.parents}</p>
@@ -111,9 +112,9 @@ function Couple() {
   return (
     <section className="px-5 py-16">
       <Heading kicker="Introducing" title="The Groom & The Bride" />
-      <Card p={groom} role="The Groom" />
+      <Card p={groom} role="The Groom" Art={GroomArt} />
       <Reveal className="my-4 text-center"><span className="gold-text font-display text-5xl italic">&amp;</span></Reveal>
-      <Card p={bride} role="The Bride" />
+      <Card p={bride} role="The Bride" Art={BrideArt} />
     </section>
   )
 }
