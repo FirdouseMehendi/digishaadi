@@ -1,12 +1,10 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Menu, X, Palette } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { LANGS } from '../i18n'
-import { THEMES } from '../config'
 
-export default function Navbar({ t, lang, setLang, theme, setTheme }) {
+export default function Navbar({ t, lang, setLang }) {
   const [open, setOpen] = useState(false)
-  const [pal, setPal] = useState(false)
   const links = [
     ['#weddings', t.nav.weddings], ['#create', t.nav.create], ['#samples', t.nav.samples],
     ['#how', t.nav.how], ['#faq', t.nav.faq],
@@ -35,32 +33,6 @@ export default function Navbar({ t, lang, setLang, theme, setTheme }) {
                 {l.label}
               </button>
             ))}
-          </div>
-
-          {/* theme */}
-          <div className="relative">
-            <button onClick={() => setPal(!pal)} aria-label={t.theme}
-              className="grid h-9 w-9 place-items-center rounded-full border border-line text-ink/80 transition hover:bg-card">
-              <Palette size={17} />
-            </button>
-            <AnimatePresence>
-              {pal && (
-                <motion.div initial={{ opacity: 0, y: -6, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -6 }}
-                  className="absolute end-0 mt-2 w-44 rounded-2xl border border-line bg-card p-2 shadow-xl">
-                  <div className="px-2 pb-1 text-[11px] uppercase tracking-wider text-muted">{t.theme}</div>
-                  {THEMES.map((th) => (
-                    <button key={th.id} onClick={() => { setTheme(th.id); setPal(false) }}
-                      className={`flex w-full items-center gap-2 rounded-xl px-2 py-1.5 text-sm transition hover:bg-alt ${theme === th.id ? 'font-semibold text-accent' : 'text-ink'}`}>
-                      <span className="flex overflow-hidden rounded-full border border-line">
-                        <i className="h-5 w-5" style={{ background: th.swatch[0] }} />
-                        <i className="h-5 w-5" style={{ background: th.swatch[1] }} />
-                      </span>
-                      {th.label}
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
 
           <a href="#create" className="hidden rounded-full bg-accent px-4 py-2 text-sm font-semibold text-onaccent transition hover:brightness-110 sm:block">

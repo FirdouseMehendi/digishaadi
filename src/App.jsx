@@ -18,7 +18,6 @@ function usePersisted(key, initial) {
 
 export default function App() {
   const [lang, setLang] = usePersisted('ds-lang', 'en')
-  const [theme, setTheme] = usePersisted('ds-theme', 'purple')
   const [trad, setTrad] = useState('nikaah')
   const [form, setForm] = useState({ n1: '', n2: '', date: '', city: '', lang: 'English', msg: '' })
 
@@ -28,13 +27,12 @@ export default function App() {
   useEffect(() => {
     document.documentElement.lang = L.id
     document.documentElement.dir = L.dir
-    document.documentElement.dataset.theme = theme
-  }, [L, theme])
+  }, [L])
 
   return (
     <>
       <div className="scroll-progress" />
-      <Navbar t={t} lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} />
+      <Navbar t={t} lang={lang} setLang={setLang} />
       <main>
         <Hero t={t} locale={L.locale} />
         <Traditions t={t} trad={trad} setTrad={setTrad} />
