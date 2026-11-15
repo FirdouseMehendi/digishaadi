@@ -25,7 +25,7 @@ export default function Rsvp() {
           <div className="grid grid-cols-2 gap-2">
             {[['yes', 'Joyfully accept'], ['no', 'Regretfully decline']].map(([v, l]) => (
               <button type="button" key={v} onClick={() => setF({ ...f, coming: v })}
-                className={`rounded-xl border px-3 py-2.5 text-xs font-medium transition ${f.coming === v ? 'border-gold bg-gold text-deep' : 'border-gold/30 text-cream/80'}`}>{l}</button>
+                className={`rounded-xl border px-3 py-2.5 text-xs font-medium transition ${f.coming === v ? 'border-gold bg-gold text-deep' : 'border-gold/30 text-cream/90'}`}>{l}</button>
             ))}
           </div>
           {f.coming === 'yes' && (

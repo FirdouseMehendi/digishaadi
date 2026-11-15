@@ -16,10 +16,10 @@ export function Reveal({ children, delay = 0, y = 30, className = '' }) {
 export function Heading({ kicker, title, sub }) {
   return (
     <Reveal className="mb-8 text-center">
-      {kicker && <p className="font-cin text-[11px] tracking-[0.5em] text-gold uppercase">{kicker}</p>}
-      <h2 className="gold-text mt-2 font-display text-4xl font-bold leading-tight">{title}</h2>
+      {kicker && <p className="font-cin text-[11px] tracking-[0.28em] text-gold uppercase">{kicker}</p>}
+      <h2 className="gold-text mt-2 text-balance font-display text-[1.9rem] font-bold leading-tight sm:text-4xl">{title}</h2>
       <Ornament />
-      {sub && <p className="mx-auto mt-3 max-w-xs text-sm text-cream/75">{sub}</p>}
+      {sub && <p className="mx-auto mt-3 max-w-xs text-sm text-cream/90">{sub}</p>}
     </Reveal>
   )
 }

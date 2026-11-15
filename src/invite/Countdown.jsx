@@ -19,7 +19,7 @@ export default function Countdown() {
           {Object.entries(parts(left)).map(([k, v]) => (
             <div key={k} className="frame rounded-2xl bg-emerald/60 py-4 text-center backdrop-blur">
               <div className="gold-text font-display text-3xl font-bold tabular-nums">{String(v).padStart(2, '0')}</div>
-              <div className="mt-1 font-cin text-[9px] tracking-[0.25em] text-cream/75 uppercase">{k}</div>
+              <div className="mt-1 font-cin text-[10px] tracking-[0.06em] text-cream/90 uppercase">{k}</div>
             </div>
           ))}
         </div>

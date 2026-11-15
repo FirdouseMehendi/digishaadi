@@ -26,7 +26,9 @@ body {
 .gold-text {
   background: linear-gradient(180deg, #fff4c2 0%, #e9c46a 40%, #b98a2b 72%, #f3d98b 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding: .08em .06em;
 }
+.gold-text.font-ar, .gold-text.font-ur { background: none; -webkit-text-fill-color: #f1d27a; color: #f1d27a; padding: .1em .05em; }
 .bg-emerald-royal {
   background:
     radial-gradient(75% 45% at 50% 0%, #14805a 0%, transparent 70%),

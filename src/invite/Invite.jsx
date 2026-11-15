@@ -17,7 +17,7 @@ function Loader() {
     <motion.div className="bg-emerald-royal fixed inset-0 z-50 grid place-items-center" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
       <div className="text-center">
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="gold-text font-ar text-4xl font-bold">بسم الله الرحمن الرحيم</motion.p>
-        <p className="mt-6 font-cin text-[10px] tracking-[0.5em] text-gold/80 uppercase">Loading blessed invitation</p>
+        <p className="mt-6 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">Loading blessed invitation</p>
         <div className="mx-auto mt-4 h-0.5 w-44 overflow-hidden rounded bg-gold/20">
           <motion.div className="h-full bg-gold" initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 1.5, ease: 'easeInOut' }} />
         </div>
@@ -44,7 +44,7 @@ function Gate({ onOpen }) {
         <div>
           <Lantern className="absolute left-6 top-0" /><Lantern className="absolute right-6 top-0" delay={1.2} />
           <p className="gold-text font-ar text-3xl font-bold">﷽</p>
-          <p className="mt-5 font-cin text-[10px] tracking-[0.5em] text-gold uppercase">Nikah Invitation</p>
+          <p className="mt-5 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">Nikah Invitation</p>
           <h1 className="gold-text mt-3 font-display text-5xl font-extrabold leading-tight">{groom.name}<br /><span className="font-display text-3xl italic font-medium">&amp;</span><br />{bride.name}</h1>
           <motion.button onClick={go} whileTap={{ scale: 0.92 }} aria-label="Open invitation"
             className="relative mx-auto mt-10 grid h-28 w-28 place-items-center rounded-full border-4 border-gold shadow-[0_0_40px_rgba(233,196,106,.45)]"
@@ -52,7 +52,7 @@ function Gate({ onOpen }) {
             <motion.span className="absolute inset-0 rounded-full border-2 border-gold" animate={{ scale: [1, 1.5], opacity: [0.7, 0] }} transition={{ duration: 1.8, repeat: Infinity }} />
             <span className="text-center"><span className="block text-3xl text-gold-hi">☪</span><span className="font-cin text-[11px] font-bold tracking-[0.3em] text-gold-hi">OPEN</span></span>
           </motion.button>
-          <p className="mt-5 font-cin text-[10px] tracking-[0.45em] text-gold/80 uppercase">Tap to open</p>
+          <p className="mt-5 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">Tap to open</p>
         </div>
       </motion.div>
     </motion.div>
@@ -66,19 +66,19 @@ function Hero() {
       <div className="pattern absolute inset-0" />
       <Lantern className="absolute left-5 top-0" /><Lantern className="absolute right-5 top-0" delay={1.4} />
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }} className="frame relative mx-auto mb-16 mt-10 w-full max-w-sm rounded-t-[999px] bg-deep/30 px-5 pb-10 pt-24 backdrop-blur-[2px]">
-        <p className="font-cin text-[11px] tracking-[0.5em] text-gold uppercase">With the blessings of Allah</p>
+        <p className="font-cin text-[11px] tracking-[0.28em] text-gold uppercase">With the blessings of Allah</p>
         <p className="gold-text mt-4 font-ar text-4xl font-bold">بسم الله الرحمن الرحيم</p>
-        <p className="mt-6 text-sm text-cream/80">we joyfully invite you to the Nikah of</p>
+        <p className="mt-6 text-sm text-cream/90">we joyfully invite you to the Nikah of</p>
         <h1 className="gold-text mt-3 font-display text-[4.2rem] font-extrabold leading-[1]">{groom.name}</h1>
         <p className="gold-text font-display text-4xl italic">&amp;</p>
         <h1 className="gold-text font-display text-[4.2rem] font-extrabold leading-[1]">{bride.name}</h1>
         <Ornament className="!mt-6" />
         <p className="mt-4 font-cin text-sm font-bold tracking-[0.3em] text-gold-hi uppercase">{fmtDate(COUPLE.events[2].date, { weekday: 'long' })}</p>
         <p className="font-display text-2xl text-gold-hi">{fmtDate(COUPLE.events[2].date, { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-        <p className="mt-2 text-sm text-cream/75">{COUPLE.venue.name} · {COUPLE.venue.city}</p>
+        <p className="mt-2 text-sm text-cream/90">{COUPLE.venue.name} · {COUPLE.venue.city}</p>
       </motion.div>
       <motion.div className="absolute bottom-6 text-gold" animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}>
-        <p className="font-cin text-[9px] tracking-[0.5em] uppercase">Scroll to invite</p>
+        <p className="font-cin text-[11px] tracking-[0.28em] uppercase">Scroll to invite</p>
         <ChevronDown className="mx-auto" />
       </motion.div>
     </section>
@@ -94,7 +94,7 @@ function Verse() {
         <p className="mx-auto mt-4 max-w-xs font-display text-lg italic leading-relaxed text-cream/90">
           “And among His signs is that He created for you mates from among yourselves, that you may find tranquillity in them; and He placed between you affection and mercy.”
         </p>
-        <p className="mt-3 font-cin text-[10px] tracking-[0.4em] text-gold uppercase">Surah Ar-Rum · 30:21</p>
+        <p className="mt-3 font-cin text-[11px] tracking-[0.26em] text-gold uppercase">Surah Ar-Rum · 30:21</p>
       </Reveal>
     </section>
   )
@@ -104,9 +104,9 @@ function Couple() {
   const Card = ({ p, role, Art }) => (
     <Reveal className="frame mx-auto max-w-xs rounded-3xl bg-gradient-to-b from-emerald/80 to-deep p-7 text-center">
       <Avatar name={p.name} photo={p.photo} Art={Art} size={170} />
-      <p className="mt-4 font-cin text-[10px] tracking-[0.5em] text-gold uppercase">{role}</p>
+      <p className="mt-4 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">{role}</p>
       <h3 className="gold-text font-display text-3xl font-bold">{p.full}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-cream/75">{p.parents}</p>
+      <p className="mt-2 text-sm leading-relaxed text-cream/90">{p.parents}</p>
     </Reveal>
   )
   return (
@@ -138,8 +138,8 @@ function Venue() {
         </svg>
         <div className="p-6">
           <h3 className="gold-text font-display text-4xl font-extrabold">{venue.name}</h3>
-          <p className="mt-1 text-sm text-cream/80">{venue.city} · {venue.pin}</p>
-          <p className="mx-auto mt-3 max-w-[260px] text-sm text-cream/70">Haldi, Mehendi and Nikah, all celebrated under one roof.</p>
+          <p className="mt-1 text-sm text-cream/90">{venue.city} · {venue.pin}</p>
+          <p className="mx-auto mt-3 max-w-[260px] text-sm text-cream/85">Haldi, Mehendi and Nikah, all celebrated under one roof.</p>
           <div className="mt-5 flex flex-wrap justify-center gap-2.5">
             <a href={maps} target="_blank" rel="noopener noreferrer" className="rounded-full bg-gold px-4 py-2 text-xs font-semibold text-deep active:scale-95">Get directions</a>
             <a href={venue.reel} target="_blank" rel="noopener noreferrer" className="rounded-full border border-gold/60 px-4 py-2 text-xs font-semibold text-gold-hi active:scale-95">See the venue</a>
@@ -160,7 +160,7 @@ function Gallery() {
           <Reveal key={i} className="frame aspect-[3/4] w-[70vw] max-w-[300px] shrink-0 snap-center overflow-hidden rounded-3xl">
             {g.src ? <img src={g.src} alt={g.caption} className="h-full w-full object-cover" /> : (
               <div className="grid h-full w-full place-items-center bg-gradient-to-br from-jade/40 via-emerald to-deep">
-                <div className="text-center"><p className="gold-text font-display text-6xl font-bold">{groom.name[0]}&amp;{bride.name[0]}</p><p className="mt-2 font-cin text-[9px] tracking-[0.4em] text-gold/70 uppercase">Photo {i + 1}</p></div>
+                <div className="text-center"><p className="gold-text font-display text-6xl font-bold">{groom.name[0]}&amp;{bride.name[0]}</p><p className="mt-2 font-cin text-[11px] tracking-[0.26em] text-gold uppercase">Photo {i + 1}</p></div>
               </div>
             )}
             <p className="relative -mt-12 bg-gradient-to-t from-deep/90 to-transparent px-4 pb-3 pt-6 text-center font-display text-sm italic text-gold-hi">{g.caption}</p>
@@ -175,15 +175,15 @@ function Thanks({ onShare }) {
   return (
     <section className="bg-emerald-royal px-6 pb-24 pt-16 text-center">
       <Reveal>
-        <p className="font-cin text-[10px] tracking-[0.5em] text-gold uppercase">With gratitude</p>
+        <p className="font-cin text-[11px] tracking-[0.28em] text-gold uppercase">With gratitude</p>
         <h2 className="gold-text mt-2 font-display text-5xl font-bold">Jazakallah Khair</h2>
         <Ornament />
-        <p className="mx-auto mt-5 max-w-xs text-sm leading-relaxed text-cream/80">
+        <p className="mx-auto mt-5 max-w-xs text-sm leading-relaxed text-cream/90">
           Your duas and presence will make our celebration complete. We look forward to welcoming you with love, In sha Allah.
         </p>
-        <p className="mt-8 font-cin text-[10px] tracking-[0.5em] text-gold uppercase">Warmly welcomed by</p>
+        <p className="mt-8 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">Warmly welcomed by</p>
         <div className="mt-3 space-y-1 font-display text-xl text-gold-hi">{COUPLE.welcomeBy.map((w) => <p key={w}>{w}</p>)}</div>
-        <p className="mt-8 font-cin text-[10px] tracking-[0.5em] text-gold uppercase">Our hashtag</p>
+        <p className="mt-8 font-cin text-[11px] tracking-[0.28em] text-gold uppercase">Our hashtag</p>
         <p className="gold-text mt-1 font-display text-2xl italic">{COUPLE.hashtag}</p>
         <button onClick={onShare} className="mt-8 inline-flex items-center gap-2 rounded-full border border-gold/60 px-5 py-2.5 text-sm text-gold-hi active:scale-95"><Share2 size={16} /> Share this invitation</button>
         <p className="mt-12 text-xs text-cream/50">Crafted with ♥ by <a href={COUPLE.brand.url} className="text-gold underline-offset-2 hover:underline">{COUPLE.brand.name}</a></p>
